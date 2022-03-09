@@ -16,7 +16,10 @@ public class FacebookTest {
         driver.manage().window().maximize();
         Thread.sleep(2000);
         driver.findElement(By.linkText("Create New Account")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.name("firstname")).sendKeys("5155wd");
         Thread.sleep(2000);
+        driver.findElement(By.name("firstname")).clear();
         driver.findElement(By.name("firstname")).sendKeys("wasim");
         Thread.sleep(1000);
         driver.findElement(By.name("lastname")).sendKeys("akram");
@@ -25,7 +28,18 @@ public class FacebookTest {
         Thread.sleep(1000);
         driver.findElement(By.name("reg_passwd__")).sendKeys("12@qwas");
         Thread.sleep(1000);
-        
+        driver.findElement(By.name("birthday_day")).sendKeys("05");
+        driver.findElement(By.name("birthday_month")).sendKeys("july");
+        driver.findElement(By.name("birthday_year")).sendKeys("1996");
+        driver.findElements(By.name("sex")).get(0).click();
+        Thread.sleep(2000);
+        System.out.println("title: "+ driver.getTitle());
+       // driver.findElement(By.name("submit")).submit();
+        System.out.println("current URL: "+ driver.getCurrentUrl());
+       // driver.navigate().to("https://www.twitter.com/");
+        driver.close();
+
+
 
     }
 }
